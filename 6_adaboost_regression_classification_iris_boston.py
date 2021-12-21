@@ -51,8 +51,7 @@ def train_gridsearch_classification_DTC(iris,cv_kf):
     print("Best params boost_DTC = ", clf.best_params_)
     
 def train_gridsearch_classification_SVC(iris,cv_kf):
-    
-    #boost_SVC = AdaBoostClassifier(base_estimator=SVC(kernel='rbf'))
+   
     boost_SVC = AdaBoostClassifier(base_estimator=SVC(kernel='rbf',probability=True))
     
     parameters = {'n_estimators': (1,2,3,4,5,6,7,8,9,10,15,20,25),                  
@@ -60,7 +59,7 @@ def train_gridsearch_classification_SVC(iris,cv_kf):
                   'algorithm': ('SAMME', 'SAMME.R'),
                   'base_estimator__C': (0.1,0.5,1.0,5.0, 10.0), 'base_estimator__gamma': (1.0,0.75,0.5,0.25,0.1,0.01) }
     
-    clf = GridSearchCV(boost_SVM, clf = GridSearchCV(boost_SVC, parameters,cv=cv_kf, n_jobs=-1),cv=cv, n_jobs=-1)
+    clf = GridSearchCV(boost_SVC,parameters, cv=cv_kf, scoring='accuracy', n_jobs=-1)
     clf.fit(iris.data, iris.target)
     print("Accuracy boost_SVM = ",clf.best_score_)
     print("Best params boost_DTC = ", clf.best_params_)
