@@ -50,6 +50,7 @@ def train_gridsearch_classification_DTC(iris,cv_kf):
                   'base_estimator__max_depth': (1, 2,3,4,5,6,8,10,12,15,20)}
     
     clf = GridSearchCV(boost_DTC, parameters,cv=cv_kf)
+    print("Trainning Adaboost DTC...") 
     t1 = time.time()
     clf.fit(iris.data, iris.target)
     t2 = time.time()
@@ -67,6 +68,7 @@ def train_gridsearch_classification_SVC(iris,cv_kf):
                   'base_estimator__C': (0.1,0.5,1.0,5.0, 10.0), 'base_estimator__gamma': (1.0,0.75,0.5,0.25,0.1,0.01) }
     
     clf = GridSearchCV(boost_SVC,parameters, cv=cv_kf, scoring='accuracy', n_jobs=-1)
+    print("Trainning Adaboost SVC...")
     t1 = time.time()
     clf.fit(iris.data, iris.target)
     t2 = time.time()
@@ -89,7 +91,8 @@ def train_gridsearch_classification_LogReg(iris,cv_kf):
                   'base_estimator__solver': ('newton-cg','lbfgs')}    
 
   
-    clf = GridSearchCV(boost_LogReg,parameters, cv=cv_kf ,scoring='accuracy', n_jobs=-1)    
+    clf = GridSearchCV(boost_LogReg,parameters, cv=cv_kf ,scoring='accuracy', n_jobs=-1)
+    print("Trainning Adaboost LR...")
     t1 = time.time()
     clf.fit(iris.data, iris.target)
     t2 = time.time()
@@ -108,8 +111,8 @@ iris_dt   = load_iris()
 
 #print("len(iris_dt)", len(iris_dt))
 #print("type(iris_dt)", type(iris_dt))
-#print(iris_dt.data)
-#print(iris_dt.target)
+print("Primeros elementos X: ",iris_dt.data[:4,:])
+print("Primeros elementos Y: ",iris_dt.target[:4])
 
 
 #train_gridsearch_classification_DTC(iris_dt,cv_kf)
