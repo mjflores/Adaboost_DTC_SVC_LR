@@ -1,9 +1,9 @@
 # Classification_Adaboost_DTC_SVC_LR
 
 
-This is an example of classification
+This is an example of classification by using Adaboost 
 
-This example uses Adaboost with DTC, SVC and LR over the iris dataset to make a classifer
+This example employs the ensemble learning technique known as Adaboost, integrating Decision Tree Classifier (DTC), Support Vector Classifier (SVC), and Logistic Regression (LR) as weak classifiers. The Iris dataset serves as the basis for training and evaluating this classifier..
 
 
 
