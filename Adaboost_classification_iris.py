@@ -15,7 +15,6 @@ Adaboost con tres clasificadores débiles:
 
 """
 
-import time
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 
