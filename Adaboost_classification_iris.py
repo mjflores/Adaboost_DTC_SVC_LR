@@ -17,7 +17,6 @@ Adaboost con tres clasificadores débiles:
 
 
 from sklearn.ensemble import AdaBoostClassifier
-
 from sklearn.tree import DecisionTreeClassifier
 
 from sklearn.svm import SVC
@@ -92,7 +91,9 @@ def train_gridsearch_classification_LogReg(iris,cv_kf):
 cv_kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 iris_dt   = load_iris()
 
-#train_gridsearch_classification_DTC(iris_dt,cv_kf)
+print("type(iris_dt)", type(iris_dt))
+
+train_gridsearch_classification_DTC(iris_dt,cv_kf)
 #train_gridsearch_classification_SVC(iris_dt,cv_kf)
-train_gridsearch_classification_LogReg(iris_dt,cv_kf)
+#train_gridsearch_classification_LogReg(iris_dt,cv_kf)
 
