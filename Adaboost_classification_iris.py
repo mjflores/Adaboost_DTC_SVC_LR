@@ -96,8 +96,10 @@ def train_gridsearch_classification_LogReg(iris,cv_kf):
 cv_kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 iris_dt   = load_iris()
 
-print("len(iris_dt)", len(iris_dt))
-print("type(iris_dt)", type(iris_dt))
+#print("len(iris_dt)", len(iris_dt))
+#print("type(iris_dt)", type(iris_dt))
+print(iris_dt.data)
+print(iris_dt.target)
 
 
 #train_gridsearch_classification_DTC(iris_dt,cv_kf)
