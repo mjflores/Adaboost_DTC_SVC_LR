@@ -1,4 +1,4 @@
-# Classification_Adaboost_DTC_SVC_LR
+# Classification with Adaboost and DTC, SVC y LR
 
 
 This is an example of classification by using Adaboost 
