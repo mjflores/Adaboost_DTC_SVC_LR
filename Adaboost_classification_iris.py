@@ -29,6 +29,11 @@ from sklearn.model_selection import KFold
 
 from sklearn.datasets import load_iris
 
+# import warnings filter
+from warnings import simplefilter
+# ignore all future warnings
+simplefilter(action='ignore', category=FutureWarning)
+
 #import sklearn
 #print("sklearn.__version__", sklearn.__version__)
 
@@ -91,9 +96,11 @@ def train_gridsearch_classification_LogReg(iris,cv_kf):
 cv_kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 iris_dt   = load_iris()
 
+print("len(iris_dt)", len(iris_dt))
 print("type(iris_dt)", type(iris_dt))
 
-train_gridsearch_classification_DTC(iris_dt,cv_kf)
+
+#train_gridsearch_classification_DTC(iris_dt,cv_kf)
 #train_gridsearch_classification_SVC(iris_dt,cv_kf)
-#train_gridsearch_classification_LogReg(iris_dt,cv_kf)
+train_gridsearch_classification_LogReg(iris_dt,cv_kf)
 
